@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180" role="img" aria-labelledby="title desc">
+  <title id="title">OM Photography</title>
+  <desc id="desc">OM Photography logo with camera lens and OM monogram</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#d8ff3e"/>
+      <stop offset=".45" stop-color="#ffd21a"/>
+      <stop offset="1" stop-color="#ff4fd8"/>
+    </linearGradient>
+    <radialGradient id="lens">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".18" stop-color="#42e8ff"/>
+      <stop offset=".5" stop-color="#6b42ff"/>
+      <stop offset=".78" stop-color="#ff4fd8"/>
+      <stop offset="1" stop-color="#111"/>
+    </radialGradient>
+  </defs>
+  <g transform="translate(15 15)">
+    <rect x="0" y="28" width="150" height="105" rx="27" fill="#0b0c14" stroke="url(#gold)" stroke-width="6"/>
+    <path d="M42 28l16-22h38l16 22" fill="#0b0c14" stroke="url(#gold)" stroke-width="6"/>
+    <circle cx="75" cy="80" r="43" fill="#080912" stroke="#f7f7f2" stroke-width="4"/>
+    <circle cx="75" cy="80" r="31" fill="url(#lens)" opacity=".95"/>
+    <circle cx="65" cy="69" r="8" fill="#fff" opacity=".8"/>
+  </g>
+  <text x="190" y="102" fill="#f7f7f2" font-family="Arial, sans-serif" font-size="88" font-weight="900" letter-spacing="-7">OM</text>
+  <text x="193" y="143" fill="url(#gold)" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="9">PHOTOGRAPHY</text>
+</svg>

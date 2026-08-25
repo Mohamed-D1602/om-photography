@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OM Photography by Omer Mahmoud — small events, parties and memorable moments across London and surrounding areas.">
+  <title>OM Photography — Omer Mahmoud</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050711;--panel:#0c1020;--text:#f8f8f4;--muted:#aeb2c3;
+      --lime:#d8ff3e;--pink:#ff4fd8;--cyan:#29d9ff;--gold:#ffd21a;
+      --line:rgba(255,255,255,.13);--max:1180px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;color:var(--text);background:
+      radial-gradient(circle at 10% 10%,rgba(41,217,255,.10),transparent 25rem),
+      radial-gradient(circle at 90% 20%,rgba(255,79,216,.11),transparent 28rem),
+      radial-gradient(circle at 50% 85%,rgba(216,255,62,.06),transparent 30rem),var(--bg);
+      line-height:1.55;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(calc(100% - 34px),var(--max));margin:auto}
+    .noise{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    header{position:fixed;top:0;left:0;right:0;z-index:15;background:rgba(5,7,17,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand img{width:175px;height:auto}
+    nav{display:flex;gap:28px;font-size:.88rem;color:#ddd}
+    nav a{position:relative;padding:28px 0}
+    nav a:after{content:"";position:absolute;left:0;right:100%;bottom:19px;height:2px;background:var(--lime);transition:right .25s}
+    nav a:hover{color:var(--lime)}nav a:hover:after{right:0}
+    .call{padding:11px 17px;border-radius:999px;background:var(--gold);color:#070812;font-weight:800;font-size:.8rem;box-shadow:0 0 28px rgba(255,210,26,.18)}
+    .hero{min-height:100svh;padding:130px 0 70px;display:grid;align-items:center;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;width:500px;height:500px;border-radius:50%;right:-150px;top:80px;background:var(--pink);filter:blur(120px);opacity:.18}
+    .hero-grid{display:grid;grid-template-columns:1fr .72fr;gap:70px;align-items:center}
+    .kicker{color:var(--lime);font-size:.73rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+    .kicker:before{content:"";width:32px;height:2px;background:var(--lime)}
+    h1,h2,h3{font-family:"Space Grotesk",sans-serif}
+    h1{font-size:clamp(4.2rem,9vw,8.2rem);line-height:.82;letter-spacing:-.08em;margin:22px 0}
+    .outline{color:transparent;-webkit-text-stroke:1.5px #fff}
+    .neon{color:var(--lime);text-shadow:0 0 28px rgba(216,255,62,.18)}
+    .hero p{max-width:610px;color:var(--muted);font-size:1.05rem}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 20px;border-radius:999px;font-weight:800;font-size:.86rem;transition:.25s}
+    .btn:hover{transform:translateY(-4px)}
+    .primary{background:var(--lime);color:#070812;box-shadow:0 12px 35px rgba(216,255,62,.13)}
+    .secondary{border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .portrait-frame{position:relative;max-width:440px;justify-self:end}
+    .portrait-frame:before{content:"";position:absolute;inset:-12px;border:1px solid rgba(216,255,62,.55);border-radius:34px;transform:rotate(3deg)}
+    .portrait-frame:after{content:"";position:absolute;inset:12px -18px -18px 12px;border:1px solid rgba(255,79,216,.35);border-radius:34px;z-index:-1;transform:rotate(-3deg)}
+    .portrait{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;border:1px solid var(--line);background:#111}
+    .portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(1.08) contrast(1.03)}
+    .badge{position:absolute;right:-28px;bottom:30px;background:var(--gold);color:#050711;padding:12px 18px;border-radius:12px;font-weight:900;transform:rotate(-5deg);box-shadow:0 15px 35px #0008}
+    .scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:.7rem;color:#7f8496;letter-spacing:.15em;text-transform:uppercase}
+    section{padding:105px 0}
+    .label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);font-weight:800;margin-bottom:15px}
+    h2{font-size:clamp(2.8rem,6vw,5.3rem);line-height:.9;letter-spacing:-.065em}
+    .script{font-family:Caveat,cursive;color:var(--gold);font-size:2.1rem;line-height:1}
+    .about{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:center}
+    .about-copy{color:var(--muted);font-size:1.05rem;max-width:650px}
+    .about-copy p+p{margin-top:16px}
+    .stats{display:flex;gap:35px;margin-top:30px;flex-wrap:wrap}
+    .stat strong{font-family:"Space Grotesk";font-size:2rem;color:var(--lime);display:block}.stat span{font-size:.75rem;color:#858a9b;text-transform:uppercase;letter-spacing:.08em}
+    .gallery-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+    .gallery-head p{max-width:390px;color:var(--muted)}
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:85px;gap:14px}
+    .shot{border-radius:20px;overflow:hidden;border:1px solid var(--line);position:relative;background:
+      linear-gradient(135deg,rgba(41,217,255,.16),transparent 45%),linear-gradient(315deg,rgba(255,79,216,.18),transparent 55%),#101523}
+    .shot:after{content:attr(data-name);position:absolute;left:15px;bottom:13px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;text-shadow:0 2px 10px #000}
+    .shot:nth-child(1){grid-column:span 7;grid-row:span 5}.shot:nth-child(2){grid-column:span 5;grid-row:span 3}.shot:nth-child(3){grid-column:span 5;grid-row:span 2}.shot:nth-child(4){grid-column:span 4;grid-row:span 4}.shot:nth-child(5){grid-column:span 8;grid-row:span 4}
+    .shot img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92;transition:transform .5s}.shot:hover img{transform:scale(1.06)}
+    .placeholder{height:100%;display:grid;place-items:center;color:#7c8191;font-size:.8rem}
+    .services{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .service-top{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:38px}
+    .service-top p{max-width:560px;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .card{min-height:190px;padding:25px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(150deg,rgba(255,255,255,.05),rgba(255,255,255,.015));position:relative;overflow:hidden;transition:.3s}
+    .card:hover{transform:translateY(-8px);border-color:rgba(216,255,62,.55)}
+    .card:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--lime)}
+    .card:nth-child(2):after{background:var(--cyan)}.card:nth-child(3):after{background:var(--pink)}.card:nth-child(4):after{background:#4cff8a}
+    .icon{font-size:2rem;margin-bottom:20px}.card h3{font-size:1.15rem}.card p{color:var(--muted);font-size:.84rem;margin-top:8px}
+    .contact{text-align:center}
+    .contact-box{border:1px solid var(--line);border-radius:30px;padding:75px 25px;background:
+      radial-gradient(circle at 15% 10%,rgba(216,255,62,.12),transparent 25rem),
+      radial-gradient(circle at 90% 90%,rgba(255,79,216,.13),transparent 25rem),#0b0f1c;position:relative;overflow:hidden}
+    .contact-box h2{max-width:800px;margin:auto}.phone{display:inline-block;font-family:"Space Grotesk";font-size:clamp(1.8rem,5vw,3.6rem);font-weight:800;margin-top:25px;color:var(--gold);transition:.25s}.phone:hover{color:var(--lime)}
+    footer{border-top:1px solid var(--line);padding:25px 0 35px;display:flex;justify-content:space-between;color:#777d8d;font-size:.75rem}
+    .reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+    @media(max-width:900px){nav{display:none}.hero-grid,.about{grid-template-columns:1fr}.portrait-frame{justify-self:start;width:min(85vw,420px)}.cards{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.shot:nth-child(n){grid-column:span 1;grid-row:span 1}.shot:nth-child(1),.shot:nth-child(5){grid-column:span 2}.gallery-head,.service-top{align-items:start;flex-direction:column}}
+    @media(max-width:560px){.wrap{width:min(calc(100% - 24px),var(--max))}.brand img{width:145px}.call{display:none}.hero{padding-top:120px}.hero h1{font-size:clamp(3.7rem,18vw,5.2rem)}section{padding:75px 0}.cards{grid-template-columns:1fr}.gallery{gap:9px;grid-auto-rows:145px}.contact-box{padding:55px 18px}footer{flex-direction:column;text-align:center;gap:8px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn,.card{transition:none}}
+  </style>
+</head>
+<body>
+<div class="noise"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home"><img src="logo.svg" alt="OM Photography"></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#services">Services</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="call" href="tel:+447586024878">☎ +44 7586 024878</a>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="kicker">London Event Photographer</div>
+        <h1>CAPTURE<br><span class="outline">THE</span> <span class="neon">VIBE.</span></h1>
+        <p>I'm <strong>Omer Mahmoud</strong> — a young photographer capturing the people, energy and spontaneous moments that make small events and parties unforgettable.</p>
+        <div class="actions">
+          <a class="btn primary" href="#gallery">📸 View my work</a>
+          <a class="btn secondary" href="tel:+447586024878">Get in touch ↗</a>
+        </div>
+      </div>
+      <div class="portrait-frame reveal">
+        <div class="portrait">
+          <img src="images/omer.jpg" alt="Omer Mahmoud, photographer">
+        </div>
+        <div class="badge">LET'S SHOOT ✦</div>
+      </div>
+    </div>
+    <div class="scroll">↓ scroll to explore</div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div class="reveal"><div class="script">About me</div><h2>HI, I'M<br>OMER<span style="color:var(--lime)">.</span></h2></div>
+      <div class="about-copy reveal">
+        <p>I'm a passionate young photographer based in London, specialising in small events, parties and special occasions.</p>
+        <p>I love catching the smiles, laughter, atmosphere and little details that make each event unique. The aim is simple: photos that bring the feeling of the day straight back.</p>
+        <div class="stats">
+          <div class="stat"><strong>01</strong><span>Creative eye</span></div>
+          <div class="stat"><strong>24/7</strong><span>Passion</span></div>
+          <div class="stat"><strong>100%</strong><span>Energy</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="gallery-head reveal">
+        <div><div class="script">My work</div><h2>PHOTO<br>GALLERY</h2></div>
+        <p>These are ready-to-swap placeholders for Omer's event photography. Replace each block with an image and keep the same layout.</p>
+      </div>
+      <div class="gallery">
+        <div class="shot reveal" data-name="Party energy"><div class="placeholder">DROP EVENT PHOTO 01</div></div>
+        <div class="shot reveal" data-name="Good times"><div class="placeholder">DROP EVENT PHOTO 02</div></div>
+        <div class="shot reveal" data-name="The details"><div class="placeholder">DROP EVENT PHOTO 03</div></div>
+        <div class="shot reveal" data-name="People"><div class="placeholder">DROP EVENT PHOTO 04</div></div>
+        <div class="shot reveal" data-name="Unforgettable"><div class="placeholder">DROP EVENT PHOTO 05</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="wrap">
+      <div class="service-top reveal">
+        <div><div class="script">What I do</div><h2>SMALL EVENTS.<br><span class="neon">BIG MEMORIES.</span></h2></div>
+        <p>Based in London and covering surrounding areas, OM Photography is ideal for birthdays, private parties, family celebrations, community events, engagements and other special occasions.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal"><div class="icon">🎉</div><h3>Parties</h3><p>Birthdays, house parties and celebrations.</p></article>
+        <article class="card reveal"><div class="icon">📅</div><h3>Small Events</h3><p>Family gatherings, school and community events.</p></article>
+        <article class="card reveal"><div class="icon">👥</div><h3>Candid & Group Shots</h3><p>Natural moments with friends and family.</p></article>
+        <article class="card reveal"><div class="icon">📷</div><h3>Portraits</h3><p>Individual and group portraits.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div class="contact-box reveal">
+        <div class="script">Get in touch</div>
+        <h2>LET'S CAPTURE<br><span class="neon">YOUR NEXT EVENT.</span></h2>
+        <a class="phone" href="tel:+447586024878">+44 7586 024878</a>
+        <div class="actions" style="justify-content:center">
+          <a class="btn primary" href="tel:+447586024878">☎ Call Omer</a>
+        </div>
+        <p style="color:var(--muted);margin-top:18px">London & surrounding areas · Small events · Parties</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© <span id="year"></span> OM Photography · Omer Mahmoud</span>
+  <span>Capturing moments · Creating memories</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
